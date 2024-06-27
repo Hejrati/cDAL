@@ -1,4 +1,4 @@
-# PyTorch implementation of "Conditional diffusion model with spatial attentionand latent embedding" [MICAI 2024] #
+# PyTorch implementation of "Conditional diffusion model with spatial attentionand latent embedding" [MICCAI 2024] #
 
 <div align="center">
   <a href="https://github.com/Hejrati" target="_blank">Behzad&nbsp;Hejrati</a> &emsp; <b>&middot;</b> &emsp;
