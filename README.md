@@ -15,7 +15,7 @@ Diffusion models have been used extensively for high quality image and video gen
 (cDAL) for medical image segmentation. In cDAL, a convolutional neural network (CNN) based discriminator is used at every time-step of the diffusion process to distinguish between the generated labels and the real
 ones. A spatial attention map is computed based on the features learned by the discriminator to help cDAL generate more accurate segmentation of discriminative regions in an input image. Additionally, we incorporated a random latent embedding into each layer of our model to significantly reduce the number of training and sampling time-steps, thereby making it much faster than other diffusion models for image segmentation
 
-![Architecture_1](![image](https://github.com/Hejrati/cDAL/assets/123422511/e64bdace-f9a7-4776-855c-e9245a8d8e2f)
+!(![image](https://github.com/Hejrati/cDAL/assets/123422511/e64bdace-f9a7-4776-855c-e9245a8d8e2f)
 
 
 
