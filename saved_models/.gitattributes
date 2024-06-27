@@ -1,0 +1,4 @@
+monu_mIoU_0.7095723733663516_F1_0.829242061772747.pth filter=lfs diff=lfs merge=lfs -text
+lung_fold0_mIoU_0.9400968685008461_F1_0.9687744376478108.pth filter=lfs diff=lfs merge=lfs -text
+lung_fold1_mIoU_0.9206181147637785_F1_0.9578827138871646.pth filter=lfs diff=lfs merge=lfs -text
+lung_fold2_mIoU_0.9305454547271645_F1_0.9637979750951863.pth filter=lfs diff=lfs merge=lfs -text
