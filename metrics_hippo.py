@@ -59,7 +59,7 @@ def print_metric(metric_name, scores, logger):
 
 def sampling_major_vote_func(pos_coeff, sample_from_model, netG, output_folder, dataset, logger, step, args, device):
     # ddp_model.eval()
-    batch_size = 1
+    # batch_size = 1
     major_vote_number = 5
     # loader = DataLoader(dataset, batch_size=batch_size)
     # loader_iter = iter(loader)
@@ -83,7 +83,7 @@ def sampling_major_vote_func(pos_coeff, sample_from_model, netG, output_folder, 
     experiment = SummaryWriter(output_folder)
 
     with torch.no_grad():
-        set_random_seed_for_iterations(step)
+        # set_random_seed_for_iterations(step)
 
         for i, data in enumerate(tqdm(dataset, total=n_rounds, desc="Major vote sampling")):
             labels = data["label"].to(dev(device))
