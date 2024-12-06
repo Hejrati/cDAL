@@ -74,6 +74,7 @@ Please check the LICENSE file.
 
 ## Bibtex ##
 Cite our paper using the following bibtex item:
+```
 @inproceedings{hejrati2024conditional,
   title={Conditional diffusion model with spatial attention and latent embedding for medical image segmentation},
   author={Hejrati, Behzad and Banerjee, Soumyanil and Glide-Hurst, Carri and Dong, Ming},
@@ -82,6 +83,6 @@ Cite our paper using the following bibtex item:
   year={2024},
   organization={Springer}
 }
-
+```
 
 
