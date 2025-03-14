@@ -36,15 +36,33 @@ Here you can find general [website](https://monuseg.grand-challenge.org/) of the
 download the dataset
 [train](https://drive.google.com/file/d/1ZgqFJomqQGNnsx7w7QBzQQMVA16lbVCA/view?usp=sharing)
 and [test](https://drive.google.com/file/d/1NKkSQ5T0ZNQ8aUhh0a8Dt2YKYCQXIViw/view?usp=sharing) sets.
+MonuSeg dataset should have the following format, Therefore you need to preprocess the dataset before running the script. 
+
+Run this [Matlab Code](https://drive.google.com/file/d/1YDtIiLZX0lQzZp_JbqneHXHvRo45ZWGX/view) to convert the masks to PNG format:
+
+```
+MonuSeg/
+    Test/
+        img/
+            XX.tif
+        mask/
+            XX.png
+    Training/
+        img/
+            XX.tif
+        mask/
+            XX.png
+```
+
 
 #### CXR ####
 
-This is the [link](https://www.kaggle.com/code/nikhilpandey360/lung-segmentation-from-chest-x-ray-dataset) for Lung segmentation from Chest X-Ray dataset.
+This [link](https://www.kaggle.com/code/nikhilpandey360/lung-segmentation-from-chest-x-ray-dataset) is for Lung segmentation from Chest X-Ray dataset.
 To preprocess images, we followed the same standard.
 
 
 #### Hippocampus 3D ####
-In this is [link](http://medicaldecathlon.com/) you can find Hippocampus dataset. This dataset can be directly downloaded from this google drive [link](https://drive.google.com/drive/folders/1HqEgzS8BV2c7xYNrZdEAnrHk7osJJ--2)
+In this [link](http://medicaldecathlon.com/), you can find Hippocampus dataset. This dataset can be directly downloaded from this google drive [link](https://drive.google.com/drive/folders/1HqEgzS8BV2c7xYNrZdEAnrHk7osJJ--2)
 
 
 ## Pretrained Checkpoints ##
