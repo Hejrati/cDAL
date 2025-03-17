@@ -88,7 +88,7 @@ We use the [MONAI](https://github.com/Project-MONAI/MONAI) implementation for Hi
 
 
 ## License ##
-Please check the LICENSE file.
+Please check the [LICENSE](https://github.com/Hejrati/cDAL/blob/master/LICENSE.txt) file.
 
 ## Bibtex ##
 Cite our paper using the following bibtex item:
