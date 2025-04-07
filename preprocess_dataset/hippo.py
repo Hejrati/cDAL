@@ -1,7 +1,6 @@
 import os
 
 import numpy as np
-import pytorch_lightning as pl
 import torch
 from matplotlib import pyplot as plt
 from monai.data import CacheDataset, DataLoader, Dataset, PersistentDataset, load_decathlon_datalist, partition_dataset, \
@@ -21,7 +20,7 @@ from monai.transforms import (
 )
 
 
-class HippocampusDecathlonDataModule(pl.LightningDataModule):
+class HippocampusDecathlonDataModule:
     class_weight = np.asarray([0.01361341, 0.47459406, 0.51179253])
 
     def __init__(
@@ -39,7 +38,6 @@ class HippocampusDecathlonDataModule(pl.LightningDataModule):
             val_transforms=None,
             **kwargs
     ):
-        super().__init__()
         self.base_dir = root_dir + "/Task04_Hippocampus/"
         self.fold = fold
         self.batch_size = batch_size
