@@ -110,12 +110,12 @@ def sampling_major_vote_func(pos_coeff, sample_from_model, netG, output_folder, 
             # for index, (gt_im, out_im) in enumerate(zip(gt_mask, x)):
             # f1, miou = calculate_metrics(-out_im[0] + 1, -gt_mask[0].squeeze() + 1)
             dice = dice_metric(y_pred=val_outputs, y=labels)
-            f1 = dice[0][0]
-            miou = dice[0][1]
+            ant_dice = dice[0][0]
+            post_dice = dice[0][1]
 
-            f1_score_list.append(f1)
-            miou_list.append(miou)
-            logger.info(f"{i} Post: {miou_list[-1]:.4f}, Ant: {f1_score_list[-1]:.4f}")
+            ant_dice_list.append(ant_dice)
+            post_dice_list.append(post_dice)
+            logger.info(f"{i} Post: {post_dice_list[-1]:.4f}, Ant: {ant_dice_list[-1]:.4f}")
 
             precision_metric(y_pred=val_outputs, y=labels)
             sensitivity_metric(y_pred=val_outputs, y=labels)
