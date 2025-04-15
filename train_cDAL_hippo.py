@@ -231,7 +231,7 @@ def train(rank, gpu, args):
     nz = args.nz  # latent dimension
 
     if args.dataset == 'hippo':
-        data_module = HippocampusDecathlonDataModule(root_dir="/home/share/Data/")
+        data_module = HippocampusDecathlonDataModule(root_dir=args.daset_root)
         data_module.setup("fit")
         data_loader = data_module.train_dataloader()
         dataset_test = data_module.val_dataloader()
@@ -294,7 +294,7 @@ def train(rank, gpu, args):
     batch_size = args.batch_size
     best_mIoU, errD_total, mse_total = 0, 0, 0
 
-    post_label = Compose([EnsureType(), AsDiscrete(to_onehot=True, n_classes=3)])
+    post_label = Compose([EnsureType(), AsDiscrete(to_onehot=3)])
     num_classes = 3
 
     for epoch in range(init_epoch, args.num_epoch + 1):
@@ -526,12 +526,12 @@ if __name__ == '__main__':
         beta_min=0.1,
         beta_max=20.,
 
-        cond_enc_layers=4,
+        cond_enc_layers=3,
         cond_enc_num_res_blocks=2,
 
         num_channels_dae=32,
         n_mlp=3,
-        ch_mult=(1, 2, 4, 4,),
+        ch_mult=(1, 2, 2, 2,),
         num_res_blocks=1,
         attn_resolutions=(16,),
         dropout=0.,
@@ -552,13 +552,14 @@ if __name__ == '__main__':
         # geenrator and training
         exp='biggann_',
         dataset='hippo',
+        daset_root = '/mnt/c/Users/Public/Documents/Datasets' ,
         nz=50,
-        num_timesteps=2,
+        num_timesteps=4,
         attn_scale=2,
 
         z_emb_dim=128,
         t_emb_dim=128,
-        batch_size=32 * 16,
+        batch_size=32 * 4, # d x num_samples
         num_epoch=12000,
         ngf=64,
 
@@ -566,7 +567,7 @@ if __name__ == '__main__':
         lr_d=1.25e-4,
         beta1=0.5,
         beta2=0.9,
-        no_lr_decay=False,
+        no_lr_decay=True,
 
         use_ema=True,
         ema_decay=0.999,
