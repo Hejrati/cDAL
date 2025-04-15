@@ -62,12 +62,7 @@ def print_metric(metric_name, scores, logger):
 
 
 def sampling_major_vote_func(pos_coeff, sample_from_model, netG, output_folder, dataset, logger, step, args, device):
-<<<<<<< HEAD
 
-=======
-    # ddp_model.eval()
-    # batch_size = 1
->>>>>>> f4d2326fda410528e70d339528725e1e8d42e413
     major_vote_number = 5
     n_rounds = len(dataset)
 
@@ -86,7 +81,7 @@ def sampling_major_vote_func(pos_coeff, sample_from_model, netG, output_folder, 
     experiment = SummaryWriter(output_folder)
 
     with torch.no_grad():
-        # set_random_seed_for_iterations(step)
+        set_random_seed_for_iterations(step)
 
         for i, data in enumerate(tqdm(dataset, total=n_rounds, desc="Major vote sampling")):
             labels = data["label"].to(dev(device))
@@ -113,7 +108,6 @@ def sampling_major_vote_func(pos_coeff, sample_from_model, netG, output_folder, 
             
 
             dice = dice_metric(y_pred=val_outputs, y=labels)
-<<<<<<< HEAD
             #  "labels": { 
             #     "0": "background", 
             #     "1": "Anterior", 
@@ -126,14 +120,6 @@ def sampling_major_vote_func(pos_coeff, sample_from_model, netG, output_folder, 
             post_dice_list.append(post_dice)
             logger.info(f"{i} Post: {post_dice_list[-1]:.4f}, Ant: {ant_dice_list[-1]:.4f}")
 
-=======
-            ant_dice = dice[0][0]
-            post_dice = dice[0][1]
-
-            ant_dice_list.append(ant_dice)
-            post_dice_list.append(post_dice)
-            logger.info(f"{i} Post: {post_dice_list[-1]:.4f}, Ant: {ant_dice_list[-1]:.4f}")
->>>>>>> f4d2326fda410528e70d339528725e1e8d42e413
 
             precision_metric(y_pred=val_outputs, y=labels)
             sensitivity_metric(y_pred=val_outputs, y=labels)
@@ -223,10 +209,4 @@ class Predictor:
 
         sample_x_pos = p_sample(x_0, x_t, t)
 
-<<<<<<< HEAD
         return sample_x_pos
-=======
-    sample_x_pos = p_sample(x_0, x_t, t)
-
-    return sample_x_pos
->>>>>>> f4d2326fda410528e70d339528725e1e8d42e413

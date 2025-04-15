@@ -8,18 +8,10 @@ import json
 import os
 from pathlib import Path
 
-<<<<<<< HEAD
 from torch import nn
 import torch
 import torch.distributed as dist
 
-=======
-import torch.distributed
-from torch import nn
-import torch.distributed as dist
-
-from preprocess_dataset.dataset import create_dataset
->>>>>>> f4d2326fda410528e70d339528725e1e8d42e413
 
 import logger
 from preprocess_dataset.hippo import HippocampusDecathlonDataModule
@@ -36,11 +28,7 @@ def main():
     device = dev(args.local_rank)
 
     if args.dataset == 'hippo':
-<<<<<<< HEAD
         data_module = HippocampusDecathlonDataModule(root_dir=args.dataset_dir) 
-=======
-        data_module = HippocampusDecathlonDataModule(root_dir="/home/share/Data/")
->>>>>>> f4d2326fda410528e70d339528725e1e8d42e413
         data_module.setup("fit")
         dataset_test = data_module.val_dataloader()
     else:
@@ -71,25 +59,16 @@ def main():
     logger.log("sampling major vote val")
 
     sampling_major_vote_func(pos_coeff, sample_from_model, netG, args.output_folder, dataset_test,
-<<<<<<< HEAD
                              logger, 10, args, device)
-=======
-                             logger, None, args, device)
->>>>>>> f4d2326fda410528e70d339528725e1e8d42e413
 
     logger.log("sampling complete")
 
 
 def create_argparser():
     defaults = dict(
-<<<<<<< HEAD
         dataset_dir="/mnt/c/Users/Public/Documents/Datasets",
         model_path="./saved_models/",
         model_name="Hippo_fold0.pth",
-=======
-        model_path="./saved_info/",
-        model_name="fold0_mean_0.8735198974609375_Post_0.880092203617096_Ant_0.8669475317001343.pth",
->>>>>>> f4d2326fda410528e70d339528725e1e8d42e413
         output_folder="output",
         seed=10,
         resume=False,
@@ -133,11 +112,7 @@ def create_argparser():
 
         z_emb_dim=128,
         t_emb_dim=128,
-<<<<<<< HEAD
         batch_size= 16,
-=======
-        batch_size=32 * 16,
->>>>>>> f4d2326fda410528e70d339528725e1e8d42e413
         num_epoch=12000,
         ngf=32,
 
@@ -167,10 +142,6 @@ def create_argparser():
         master_port='6020'
     )
 
-<<<<<<< HEAD
-=======
-    parameters_path = f"parameters_{defaults['dataset']}.json"
->>>>>>> f4d2326fda410528e70d339528725e1e8d42e413
     output_dir = os.path.join(defaults["model_path"], defaults["output_folder"])
     defaults.update(model_path=os.path.join(defaults["model_path"], defaults["model_name"]))
     if not os.path.exists(output_dir):

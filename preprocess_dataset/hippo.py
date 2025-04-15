@@ -22,14 +22,11 @@ from monai.transforms import (
 """ 
 Hippocampus Dataset Loader for the Decathlon Challenge
 
-<<<<<<< HEAD
 This script manages the loading and preprocessing of the Hippocampus dataset as part of the Decathlon challenge.
 The configurations implemented in this module are derived from the repository:
 https://github.com/VinAIResearch/3D-UCaps/blob/4e3c29de3f7ba563dd3285209bc3aa2bd74ed6cb/datamodule/hippocampus.py
 """
 
-=======
->>>>>>> f4d2326fda410528e70d339528725e1e8d42e413
 class HippocampusDecathlonDataModule:
     class_weight = np.asarray([0.01361341, 0.47459406, 0.51179253])
 
