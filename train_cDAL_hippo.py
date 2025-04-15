@@ -430,7 +430,7 @@ def train(rank, gpu, args):
                     optimizerG.swap_parameters_with_ema(store_params_in_ema=True)
 
                 torch.save(netG.state_dict(),
-                           os.path.join(exp_path, f'netG_{epoch}_mean_{best_mIoU}_Post_{mIoU_post}_Ant_{mIoU_ant}.pth'))
+                           os.path.join(exp_path, f'netG_{epoch}_mean_{best_mIoU:.4f}_Post_{mIoU_post:.4f}_Ant_{mIoU_ant:.4f}.pth'))
 
         if args.save_content:
             if epoch % args.save_content_every == 0:
