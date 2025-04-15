@@ -526,12 +526,12 @@ if __name__ == '__main__':
         beta_min=0.1,
         beta_max=20.,
 
-        cond_enc_layers=3,
+        cond_enc_layers=4,
         cond_enc_num_res_blocks=2,
 
         num_channels_dae=32,
         n_mlp=3,
-        ch_mult=(1, 2, 2, 2,),
+        ch_mult=(1, 2, 4, 4,),
         num_res_blocks=1,
         attn_resolutions=(16,),
         dropout=0.,
@@ -553,7 +553,7 @@ if __name__ == '__main__':
         exp='biggann_',
         dataset='hippo',
         nz=50,
-        num_timesteps=4,
+        num_timesteps=2,
         attn_scale=2,
 
         z_emb_dim=128,
@@ -566,7 +566,7 @@ if __name__ == '__main__':
         lr_d=1.25e-4,
         beta1=0.5,
         beta2=0.9,
-        no_lr_decay=True,
+        no_lr_decay=False,
 
         use_ema=True,
         ema_decay=0.999,
