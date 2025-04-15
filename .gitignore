@@ -1,0 +1,5 @@
+*.pyc
+saved_models/*
+__pycache__/
+*.idea
+*.pth

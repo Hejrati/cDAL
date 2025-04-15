@@ -215,7 +215,7 @@ def train(rank, gpu, args):
     device = torch.device('cuda:{}'.format(gpu))
 
     exp = args.exp
-    parent_dir = "./saved_info/dd_gan/{}".format(args.dataset)
+    parent_dir = "./saved_info/{}".format(args.dataset)
 
     exp_path = os.path.join(parent_dir, exp)
     if rank == 0:
@@ -583,7 +583,7 @@ if __name__ == '__main__':
         num_proc_node=1,
         num_process_per_node=1,
         node_rank=0,
-        local_rank=1,
+        local_rank=0,
         master_address='127.0.0.1',
     )
 
